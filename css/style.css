@@ -34,16 +34,6 @@ body {
   --text-color: #707070;
   --back-color: #eff3f7;
   --border-color: #dee3ed8a;
-  /*--text-color: #003c5e;
-  --blue-color: #1ebcb4;
-  
-  --orange-color: #fdbc63;
-  --gray-color: #8a9ab1;
-  --hover-color: #1e59d5;
-  --footer-color: #172234;
-  
-  --border-radius: 5px;
-  --padding: 9px 0; */
 }
 ul {
   padding: 0;
@@ -66,14 +56,35 @@ a {
 .the-btn a {
   color: var(--white-color);
 }
+.the-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+div[class^="section"] {
+  padding: 80px 0;
+}
+div[class^="section"] .text{
+  padding: 30px 0;
+}
+div[class^="section"] .text h2 {
+  color: var(--main-color);
+}
+div[class^="section"] .text p {
+  font-size: 20px;
+  color: var(--text-color);
+}
 /* navbar section */
 .navbar {
-  height: 80px;
+  height: 70px;
   background-color: var(--white-color);
+  box-shadow: 0px 3px 6px #00000029;
 }
 .navbar .logo img {
-  height: 70px;
-  width: 70px;
+  height: 55px;
+  width: 55px;
 }
 .navbar .menu-list {
   margin-right: 20%;
@@ -94,7 +105,8 @@ a {
 }
 
 /****************************/
-.home-slide {
+.home-page .home-slide,
+.about-page .about-slide {
   background-image: url(../images/home.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -102,41 +114,21 @@ a {
   height: 100vh;
   color: var(--white-color);
 }
-.home-slide .overlay {
+.home-page .home-slide .overlay,
+.about-page .about-slide .overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.home-slide .overlay h1 {
+.home-page .home-slide .overlay h1,
+.about-page .about-slide .overlay h1 {
   line-height: 57px;
   margin-bottom: 50px;
 }
-.home-slide .overlay .the-btn {
+.home-page .home-slide .overlay .the-btn,
+.about-page .about-slide .overlay .the-btn {
   margin: 0 auto;
   min-width: 170px;
-}
-/**********************/
-.section-1,
-.section-2 {
-  padding: 80px 0;
-}
-.section-1 .the-img img,
-.section-2 .the-img img {
-  width: 100%;
-  border-radius: 10px;
-}
-.section-1 .section-text,
-.section-2 .section-text {
-  padding: 30px 0;
-}
-.section-1 .section-text h2,
-.section-2 .section-text h2 {
-  color: var(--main-color);
-}
-.section-1 .section-text p,
-.section-2 .section-text p {
-  font-size: 20px;
-  color: var(--text-color);
 }
 /*********************/
 .footer {
@@ -323,7 +315,119 @@ a {
   margin-bottom: 15px;
   color: var(--text-color);
 }
+.page-content .finance-content h4,
+.page-content .finance-content .certificate {
+  color: var(--main-color);
+  background: #fcfcfc 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 49px;
+  padding: 15px 35px;
+}
+.page-content .finance-content .Installment .inst {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 49px;
+  padding: 15px 35px;
+  border: 1px solid var(--border-color);
+  font-size: 18px;
+}
+.page-content .finance-content .Installment .inst p {
+  margin: 0;
+}
+.page-content .finance-content .Installment .inst input {
+  display: none;
+}
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input:checked
+  ~ label,
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input
+  .active
+  ~ label {
+  color: var(--main-color);
+}
 
-.page-content .finance-content h4 {
+.page-content .finance-content .Installment .inst .form-check label:after,
+.page-content .finance-content .Installment .inst .form-check label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input:checked
+  ~ label:before,
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input
+  .active
+  ~ label:before {
+  background: var(--main-color);
+}
+.page-content .finance-content .Installment .inst .form-check label:after {
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 7%);
+}
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input:checked
+  ~ label:after,
+.page-content
+  .finance-content
+  .Installment
+  .inst
+  .form-check
+  input
+  .active
+  ~ label:after {
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+/***************** about page ***********************/
+.about-page .about-slide {
+  background-image: url(../images/about.jpg);
+}
+.about-page .section-1 .the-img {
+  background-image: url(../images/about-1.jpg);
+}
+.about-page .section-2 .the-img {
+  background-image: url(../images/about-2.jpg);
+}
+.about-page .section-3 .the-img {
+  background-image: url(../images/about-3.jpg);
+}
+.about-page .section-3 .courses-list p{
+  margin-bottom: 5px;
+  color: var(--black-color);
+}
+.about-page .section-3 .courses-list li{
+  color: var(--text-color);
+}
+.about-page .section-3 a{
   color: var(--main-color);
 }
