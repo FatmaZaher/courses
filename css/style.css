@@ -66,7 +66,7 @@ a {
 div[class^="section"] {
   padding: 80px 0;
 }
-div[class^="section"] .text{
+div[class^="section"] .text {
   padding: 30px 0;
 }
 div[class^="section"] .text h2 {
@@ -87,15 +87,12 @@ div[class^="section"] .text p {
   width: 55px;
 }
 .navbar .menu-list {
-  margin-right: 20%;
-  width: 47%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-right: 15%;
 }
 .navbar .menu-list .menu-item {
   display: inline-block;
   font-weight: 700;
+  margin-left: 50px;
 }
 .navbar .menu-list .menu-item a {
   color: var(--text-color);
@@ -106,7 +103,8 @@ div[class^="section"] .text p {
 
 /****************************/
 .home-page .home-slide,
-.about-page .about-slide {
+.about-page .about-slide,
+.student-home-page .home-slide {
   background-image: url(../images/home.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -115,20 +113,29 @@ div[class^="section"] .text p {
   color: var(--white-color);
 }
 .home-page .home-slide .overlay,
-.about-page .about-slide .overlay {
+.about-page .about-slide .overlay,
+.student-home-page .home-slide .overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 .home-page .home-slide .overlay h1,
-.about-page .about-slide .overlay h1 {
+.about-page .about-slide .overlay h1,
+.student-home-page .home-slide .overlay h1 {
   line-height: 57px;
   margin-bottom: 50px;
 }
 .home-page .home-slide .overlay .the-btn,
-.about-page .about-slide .overlay .the-btn {
+.about-page .about-slide .overlay .the-btn,
+.student-home-page .home-slide .overlay .the-btn {
   margin: 0 auto;
   min-width: 170px;
+}
+.home-page .section-1 .the-img {
+  background-image: url(../images/img-1.jpg);
+}
+.home-page .section-2 .the-img {
+  background-image: url(../images/img-2.jpg);
 }
 /*********************/
 .footer {
@@ -315,7 +322,7 @@ div[class^="section"] .text p {
   margin-bottom: 15px;
   color: var(--text-color);
 }
-.page-content .finance-content h4,
+.finance-content h4,
 .page-content .finance-content .certificate {
   color: var(--main-color);
   background: #fcfcfc 0% 0% no-repeat padding-box;
@@ -332,6 +339,12 @@ div[class^="section"] .text p {
   padding: 15px 35px;
   border: 1px solid var(--border-color);
   font-size: 18px;
+}
+.page-content .finance-content .Installment .inst > div{
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .page-content .finance-content .Installment .inst p {
   margin: 0;
@@ -408,8 +421,10 @@ div[class^="section"] .text p {
   border-color: var(--main-color);
   box-shadow: none;
 }
+
 /***************** about page ***********************/
-.about-page .about-slide {
+.about-page .about-slide,
+.student-home-page .home-slide {
   background-image: url(../images/about.jpg);
 }
 .about-page .section-1 .the-img {
@@ -421,13 +436,374 @@ div[class^="section"] .text p {
 .about-page .section-3 .the-img {
   background-image: url(../images/about-3.jpg);
 }
-.about-page .section-3 .courses-list p{
+.about-page .section-3 .courses-list p {
   margin-bottom: 5px;
   color: var(--black-color);
 }
-.about-page .section-3 .courses-list li{
+.about-page .section-3 .courses-list li {
   color: var(--text-color);
 }
-.about-page .section-3 a{
+.about-page .section-3 a {
   color: var(--main-color);
+}
+/************** sections page **********************/
+.page-sections .nav-link {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+}
+.page-sections .nav-pills .nav-link.active,
+.page-sections .nav-pills .show > .nav-link {
+  background-color: var(--main-color);
+}
+.page-sections .inside-link .nav-link {
+  border-radius: 30px;
+  color: var(--main-color);
+  font-size: 16px;
+  padding: 10px 0;
+  margin-bottom: 0;
+  min-width: 130px;
+}
+.page-sections .nav-tabs-1 .nav-tabs {
+  border-bottom: none;
+  padding: 15px 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background-color: var(--white-color);
+}
+.page-sections .nav-tabs-1 .nav-tabs .nav-link {
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  padding: 0 25px 20px 25px;
+  margin-bottom: 2px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.page-sections .nav-tabs-1 .nav-tabs .nav-link.active {
+  border: none;
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+  margin: 0;
+}
+
+.page-sections input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+}
+.page-sections .the-bttn {
+  height: 60px;
+  line-height: unset;
+  font-size: 17px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  color: var(--text-color);
+}
+.page-sections .the-bttn:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+/****************** add lecture page *****************/
+.add-lecture-body .add-lecture-title h4 {
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.add-lecture-body .image-upload {
+  width: 30%;
+  margin-left: auto;
+  height: 200px;
+  border: solid 1px #ffe8ba;
+  background-color: #fff7e9;
+  position: relative;
+  margin-bottom: 20px;
+}
+.image-upload.uploadded .input-image .icon {
+  display: none;
+}
+.add-lecture-body .image-upload .input-image input {
+  opacity: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.add-lecture-body .check-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 2;
+  background: #fff7e9;
+  border: solid 1px transparent;
+  border-bottom: 0;
+  z-index: 4;
+}
+
+.add-lecture-body .check-image label {
+  color: var(--main-color);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.add-lecture-body .image-upload .input-image .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-lecture-body .image-upload .input-image .icon svg {
+  width: 80px;
+  height: 80px;
+  fill: var(--main-color);
+}
+
+.add-lecture-body .image-upload .input-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+  object-fit: contain;
+  padding-top: 45px;
+}
+
+.add-lecture-body .image-upload.uploadded .input-image img {
+  display: block;
+}
+
+.add-lecture-body .image-upload.uploadded .input-image .icon {
+  display: none;
+}
+
+.add-lecture-body .image-upload img {
+  display: none;
+}
+
+.add-lecture-body .form-group > label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.add-lecture-body .nice-select {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  display: block;
+  height: 42px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0.375rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-lecture-body .nice-select {
+  width: 100%;
+  float: none;
+}
+
+.add-lecture-body .nice-select:after {
+  left: 12px;
+  right: auto;
+}
+
+.add-lecture-body .nice-select span {
+  display: block;
+  text-align: right;
+}
+
+.add-lecture-body .the-btn {
+  height: 60px;
+  line-height: unset;
+  font-size: 17px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  color: var(--text-color);
+}
+.add-lecture-body .the-btn:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+/****************/
+
+.all-cards .single-card {
+  width: calc((100% - 50px) / 3);
+  padding: 30px;
+  background: var(--white-color);
+  box-shadow: 5px 10px 30px rgba(22, 0, 86, 0.06);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  height: 400px;
+  position: relative;
+  margin-bottom: 53px;
+}
+.all-cards .single-card .card-text h5 {
+  color: var(--main-color);
+  font-weight: 800;
+}
+.all-cards .single-card .card-text p {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: justify;
+}
+.all-cards .single-card .card-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+  background: #f2b10f2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.all-cards .single-card .card-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--main-color);
+}
+.all-cards .single-card .card-num span {
+  color: rgba(20, 20, 43, 0.05);
+  font-size: 43px;
+  font-weight: 700;
+}
+.all-cards .single-card .the-btnn {
+  position: absolute;
+  left: 30px;
+  bottom: -60px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  height: 56px;
+  line-height: 56px;
+  background-color: var(--white-color);
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+}
+.all-cards .single-card .the-btnn a {
+  color: var(--text-color);
+}
+.all-cards .single-card .arrow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #f5f5f5;
+  bottom: -30px;
+  right: 20px;
+  border-radius: 5px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.all-cards .single-card .arrow > div {
+  background-color: var(--white-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  justify-content: center;
+}
+.all-cards .single-card .arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--main-color);
+  transform: rotate(-45deg);
+  margin-top: 9px;
+}
+.all-cards .single-card:hover {
+  background-color: var(--main-color);
+}
+.all-cards .single-card:hover .card-icon {
+  background-color: #ffffff30;
+}
+.all-cards .single-card:hover .card-icon svg {
+  fill: var(--white-color);
+}
+.all-cards .single-card:hover .card-num span,
+.all-cards .single-card:hover .card-text p {
+  opacity: 0;
+}
+.all-cards .single-card:hover .card-text h5 {
+  color: var(--white-color);
+}
+.all-cards .single-card:hover .the-btnn {
+  bottom: 50px;
+  opacity: 1;
+}
+.all-cards .single-card:hover .arrow > div {
+  background-color: var(--text-color);
+}
+.all-cards .single-card:hover .arrow > div svg {
+  fill: var(--white-color);
+}
+@media (max-width: 767.98px) {
+  .all-cards .single-card {
+    width: 100%;
+  }
+}
+/***********************/
+.finance-tab .tab-content h4 {
+  color: var(--main-color);
+  font-weight: 600;
+}
+.finance-tab .tab-content p {
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 35px 0;
+}
+.finance-tab .tab-content span {
+ padding: 15px 20px;
+ border-radius: 5px;
+  border: 1px solid var(--border-color);
+}
+.finance-tab .tab-content .finance-content .btn-link{
+  margin: 0 0 15px 0;
+  color: var(--main-color);
+  background: #fcfcfc 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 49px;
+  padding: 15px 35px;
+  width: 100%;
+  text-align: right;
+  font-size: 18px;
+  text-decoration: none;
+}
+.card{
+  border: none;
+}
+.card-header{
+    padding: 0;
+    margin-bottom: unset;
+    background-color: transparent;
+    border-bottom: none;
 }
