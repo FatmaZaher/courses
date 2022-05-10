@@ -86,8 +86,9 @@ div[class^="section"] .text p {
   height: 55px;
   width: 55px;
 }
-.navbar .menu-list {
-  margin-right: 15%;
+.navbar .menu {
+  margin-right: 10%;
+  width: 75%;
 }
 .navbar .menu-list .menu-item {
   display: inline-block;
@@ -100,7 +101,98 @@ div[class^="section"] .text p {
 .navbar .menu-list .menu-item.active a {
   color: var(--main-color);
 }
+.navbar .menu-icon {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  border-radius: 5px;
+}
+.navbar .menu-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--main-color);
+}
+.navbar .menu-icon:hover svg {
+  fill: var(--main-color);
+}
+@media (max-width: 767px) {
+  .navbar .menu-icon {
+    display: flex;
+  }
+  .navbar .menu {
+    display: none;
+  }
+}
+/************** mobile navbar **********************/
 
+.body-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #00000091;
+  opacity: 0;
+  display: none;
+}
+.mobile-navbar {
+  position: fixed;
+  height: 100%;
+  max-height: 10000px;
+  width: 280px;
+  top: 0;
+  left: -100%;
+  padding: 30px;
+  background-color: #fff;
+  z-index: 101;
+}
+/*.mobile-navbar .mobile-head .close-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out; 
+}*/
+.mobile-navbar .mobile-head .mobile-logo img {
+  width: 90px;
+}
+.mobile-navbar .mobile-head .close-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--main-color);
+}
+.mobile-navbar .mobile-list {
+  overflow-y: auto;
+  margin-top: 35px;
+}
+.mobile-navbar .mobile-list .menu {
+  list-style: none;
+  padding-left: 0;
+  text-transform: capitalize;
+}
+.mobile-navbar .mobile-list .menu .menu-item {
+  margin-bottom: 35px;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+.mobile-navbar .mobile-list .menu .menu-item a {
+  color: var(--text-color);
+}
+.mobile-navbar .mobile-list .menu .menu-item.active a {
+  color: var(--main-color);
+}
+.mobile-navbar .mobile-list .menu .menu-item :hover a {
+  color: var(--main-color);
+}
 /****************************/
 .home-page .home-slide,
 .about-page .about-slide,
@@ -136,6 +228,14 @@ div[class^="section"] .text p {
 }
 .home-page .section-2 .the-img {
   background-image: url(../images/img-2.jpg);
+}
+@media (max-width: 767px) {
+  .the-img {
+    height: 230px;
+  }
+  div[class^="section"] {
+    padding: 50px 0;
+  }
 }
 /*********************/
 .footer {
@@ -283,6 +383,15 @@ div[class^="section"] .text p {
 .login-page .content-side .buttons p a {
   color: var(--main-color);
 }
+
+@media (max-width: 767px) {
+  .login-page .content-side {
+    width: 100%;
+  }
+  .login-page .img-side {
+    display: none;
+  }
+}
 /**************** lectures page *************************/
 .page-content {
   padding: 100px 0;
@@ -291,8 +400,10 @@ div[class^="section"] .text p {
   color: var(--main-color);
   font-weight: 700;
 }
-.page-content .lectures .lecture {
+.lecture-page .lectures .lecture {
   width: calc((100% - 30px) / 3);
+}
+.page-content .lectures .lecture {
   padding: 15px;
   background-color: #ff8b000d;
   margin-bottom: 15px;
@@ -340,7 +451,7 @@ div[class^="section"] .text p {
   border: 1px solid var(--border-color);
   font-size: 18px;
 }
-.page-content .finance-content .Installment .inst > div{
+.page-content .finance-content .Installment .inst > div {
   width: 33%;
   display: flex;
   align-items: center;
@@ -351,6 +462,9 @@ div[class^="section"] .text p {
 }
 .page-content .finance-content .Installment .inst input {
   display: none;
+}
+.page-content .finance-content .Installment .inst .form-check {
+  padding-left: 0;
 }
 .page-content
   .finance-content
@@ -421,7 +535,21 @@ div[class^="section"] .text p {
   border-color: var(--main-color);
   box-shadow: none;
 }
-
+@media (max-width: 767px) {
+  .page-content .finance-content .Installment .inst {
+    font-size: 10px;
+  }
+  .page-content .finance-content .Installment .inst > div {
+    width: unset;
+  }
+  .page-content .finance-content .Installment .inst .form-check label:after,
+  .page-content .finance-content .Installment .inst .form-check label:before {
+    right: -16px;
+  }
+  .lecture-page .lectures .lecture {
+    width: 100%;
+  }
+}
 /***************** about page ***********************/
 .about-page .about-slide,
 .student-home-page .home-slide {
@@ -503,6 +631,7 @@ div[class^="section"] .text p {
   height: 17px;
 }
 .page-sections .the-bttn {
+  min-width: 130px;
   height: 60px;
   line-height: unset;
   font-size: 17px;
@@ -648,6 +777,12 @@ div[class^="section"] .text p {
   background-color: var(--main-color);
   color: var(--white-color);
 }
+
+@media (max-width: 767px) {
+  .add-lecture-body .image-upload {
+    width: 100%;
+  }
+}
 /****************/
 
 .all-cards .single-card {
@@ -782,11 +917,11 @@ div[class^="section"] .text p {
   margin: 35px 0;
 }
 .finance-tab .tab-content span {
- padding: 15px 20px;
- border-radius: 5px;
+  padding: 15px 20px;
+  border-radius: 5px;
   border: 1px solid var(--border-color);
 }
-.finance-tab .tab-content .finance-content .btn-link{
+.finance-tab .tab-content .finance-content .btn-link {
   margin: 0 0 15px 0;
   color: var(--main-color);
   background: #fcfcfc 0% 0% no-repeat padding-box;
@@ -798,12 +933,95 @@ div[class^="section"] .text p {
   font-size: 18px;
   text-decoration: none;
 }
-.card{
+.card {
   border: none;
 }
-.card-header{
-    padding: 0;
-    margin-bottom: unset;
-    background-color: transparent;
-    border-bottom: none;
+.card-header {
+  padding: 0;
+  margin-bottom: unset;
+  background-color: transparent;
+  border-bottom: none;
 }
+/*********************************/
+* {box-sizing: border-box;}
+.card-header * {list-style-type: none;}
+
+.required:after{
+    content:"*";
+    font-weight:bold;
+    color: red;
+    margin-left: 5px;
+}
+
+.card-header {
+    padding: 50px 25px;
+    width: 100%;
+}
+
+.card-header ul {
+    margin: 0;
+    padding: 0;
+}
+
+.card-header ul li {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.days {
+    padding: 10px 0;
+}
+
+.badge1 {
+    position:relative;
+}
+.badge1[data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    top: -0.5px;
+    right: -0.5px;
+    font-size: .7em;
+    background: red;
+    color: white;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px #333;
+}
+
+@media screen and (max-width:720px) {
+
+    .weekdays td,
+    .days td {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .weekdays td,
+    .days td {
+        width: 12.5%;
+    }
+
+    .days td .active {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+
+    .weekdays td,
+    .days td {
+        width: 12.2%;
+    }
+}
+
