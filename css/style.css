@@ -655,8 +655,9 @@ div[class^="section"] .text p {
   width: 30%;
   margin-left: auto;
   height: 200px;
-  border: solid 1px #ffe8ba;
-  background-color: #fff7e9;
+  border: solid 1px #7070703b;
+  background-color: #f9f9f9;
+  border-radius: 5px;
   position: relative;
   margin-bottom: 20px;
 }
@@ -704,7 +705,7 @@ div[class^="section"] .text p {
 .add-lecture-body .image-upload .input-image .icon svg {
   width: 80px;
   height: 80px;
-  fill: var(--main-color);
+  fill: var(--text-color);
 }
 
 .add-lecture-body .image-upload .input-image img {
@@ -953,10 +954,10 @@ div[class^="section"] .text p {
     margin-left: 5px;
 }
 
-.card-header {
+/* .card-header {
     padding: 50px 25px;
     width: 100%;
-}
+} */
 
 .card-header ul {
     margin: 0;
@@ -1024,4 +1025,27 @@ div[class^="section"] .text p {
         width: 12.2%;
     }
 }
+/*******************************/
+.fc .fc-col-header-cell-cushion{
+  color: var(--black-color);
+}
 
+.fc .fc-button-primary{
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+.fc .fc-daygrid-day-number{
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 20px;
+}
+.fc-h-event .fc-event-main-frame{
+  background-color: var(--main-color);
+}
+.fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start,
+.fc-daygrid-event-dot{
+  border-color: var(--main-color);
+}
+.fc-direction-rtl .fc-daygrid-event .fc-event-time, .fc-daygrid-dot-event .fc-event-title{
+  color: var(--text-color);
+}
